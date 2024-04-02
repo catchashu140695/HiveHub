@@ -1,0 +1,140 @@
+.login {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(2,0,36);
+    z-index: -1;
+
+    .card {
+        height: 400px;
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        border: none;
+        border-radius: 10px;
+
+        .left {
+            width: 50%;
+            height: auto;
+            background-image: linear-gradient(rgba(215, 187, 57, 0.8), rgba(215, 187, 57, 0.8)), url(../../Assets/img/login-bg2.jpg);
+            background-size: cover;
+            color: white;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 10px;
+
+            h1 {
+                font-size: 50px;
+            }
+
+            p {
+                font-weight: 800;
+            }
+
+            span {
+                text-align: right;
+                font-size: 15px;
+            }
+
+            button {
+
+                height: 50px;
+                color: black;
+                background-color: white;
+                border: none;
+                font-size: 20px;
+                font-weight: 600;
+                transition: 1ms ease-in;
+                border-radius: 10px;
+            }
+
+            button:hover {
+                color: white;
+                background-color: #060725;
+
+            }
+        }
+
+        .right {
+            width: 50%;
+            height: auto;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-radius: 10px;
+            gap: 10px;
+
+            h1 {
+                font-size: 30px;
+                color: darkslategrey;
+            }
+
+            form {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 20px;
+
+                input {
+                    display: block;
+                    border: none;
+                    border-bottom: 1px solid gray;
+                    height: 50px;
+                }
+
+                a {
+                    text-align: right;
+                    font-size: 15px;
+                    cursor: pointer;
+                    color: blue($color: #000000);
+                }
+
+                button {
+                    height: 50px;
+                    color: black;
+                    background-color: gray;
+                    border: none;
+                    font-size: 20px;
+                    font-weight: 600;
+                    transition: 1ms ease-in;
+                    border-radius: 10px;
+                }
+
+                button:hover {
+                    color: white;
+                    background-color: #060725;
+
+                }
+
+            }
+
+        }
+
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .login{
+        background-size: auto;
+    }
+    .login .card{
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+    }
+    .login .card .left{
+        width: 100%;
+        flex-direction: column;
+    }
+    .login .card .right{
+        width: 100%;
+        flex-direction: column;
+    }
+  }
