@@ -1,32 +1,69 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './Pages/Login/login.jsx'
 import Register from './Pages/Register/register.jsx'
+import Navbar from './Components/Navbar/navbar.jsx'
+import Leftbar from './Components/Leftbar/leftbar.jsx'
+import Rightbar from './Components/Rightbar/rightbar.jsx';
+import Home from './Pages/Home/home.jsx'
+import Profile from './Pages/Profile/profile.jsx'
 
 function App() {
 
+  const currentUser=false;
+
+  const ProtectedRoute=({children})=>{
+    if(!currentUser)
+    {
+      return <Navigate to="/Login"></Navigate>
+    }
+    return children;
+  }
+
+
+
   return (
     <>
-    
       <BrowserRouter>
-        
         <Routes>
           <Route path='/' Component={() => {
             return (
-              <Login />
+              <>
+              <ProtectedRoute>
+                <Navbar />
+                <div style={{ display: "flex" }}>
+                  <Leftbar />
+                  <Home />
+                  <Rightbar />
+                </div>
+                </ProtectedRoute>
+              </>
             )
           }}></Route>
-          <Route exact path='/login' Component={() => {
+          <Route path='/login' Component={() => {
             return (
-              <Login />
+              <Login></Login>
             )
-          }}></Route>
-          <Route exact path='/register' Component={() => {
+          }} ></Route>
+          <Route path='/register' Component={() => {
             return (
-              <Register />
+              <Register></Register>
             )
-          }}></Route>
+          }} ></Route>
+          <Route path='/profile' Component={() => {
+            return (
+              <>
+                <Navbar />
+                <div style={{ display: "flex" }}>
+                  <Leftbar />
+                  <Profile />
+                  <Rightbar />
+                </div>
+              </>
+            )
+          }} ></Route>
         </Routes>
+
       </BrowserRouter>
     </>
   );

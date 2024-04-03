@@ -12,7 +12,7 @@ export default function login() {
               <p>HiveHub: Your vibrant social hive. Connect, share, and thrive in our buzzing community. Join us today!</p>
               <span>Don't have an account ?</span>
               <NavLink to="/register">
-                    <button>Register</button>
+                   Register
                 </NavLink>
             </div>
             <div className='right'>
@@ -20,9 +20,9 @@ export default function login() {
               <form action="">
                 <input type='text' placeholder='Username' />
                 <input type='password' placeholder='Passsword' />
-                <a>Forgot Password ?</a>
+                <span>Forgot Password ?</span>
                 <NavLink to="/login">
-                    <button>Login</button>
+                    Login
                 </NavLink>
               </form>
             </div>
