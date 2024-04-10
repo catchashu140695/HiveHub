@@ -1,0 +1,9 @@
+.rightbar{
+    height: calc(100vh - 71px);
+    background-color: white;
+    width: 30%;
+    overflow: scroll;
+    ::-webkit-scrollbar{
+        display: none;
+    }
+}

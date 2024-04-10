@@ -29,7 +29,7 @@ const navbar = () => {
           <AccountCircleOutlinedIcon />
           <EmailOutlinedIcon />
           <NotificationsNoneOutlinedIcon />
-          div.
+          
         </div>
       </div>
     </>

@@ -10,7 +10,7 @@ import Profile from './Pages/Profile/profile.jsx'
 
 function App() {
 
-  const currentUser=false;
+  const currentUser=true;
 
   const ProtectedRoute=({children})=>{
     if(!currentUser)
@@ -33,7 +33,10 @@ function App() {
                 <Navbar />
                 <div style={{ display: "flex" }}>
                   <Leftbar />
-                  <Home />
+                  <div style={{width:"50%"}}>
+                    <Home />
+                  </div>
+                  
                   <Rightbar />
                 </div>
                 </ProtectedRoute>
@@ -56,7 +59,9 @@ function App() {
                 <Navbar />
                 <div style={{ display: "flex" }}>
                   <Leftbar />
-                  <Profile />
+                  <div style={{width:"50%"}}>
+                    <Profile />
+                  </div>
                   <Rightbar />
                 </div>
               </>

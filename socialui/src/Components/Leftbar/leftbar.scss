@@ -1,0 +1,63 @@
+.leftbar{
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - 71px);
+    overflow: scroll;
+    background-color: white;
+    width: 20%;
+    gap: 20px;
+    padding: 10px 20px;
+    border-right: 1px solid lightgray;
+    &::-webkit-scrollbar{
+        display: none;
+    }
+    position: sticky;
+    left: 0;
+    box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.2);
+    .user{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px solid lightgray;
+        border-radius: 10px;
+        box-shadow: 4px 4px 4px 4px rgba(0.2, 0.2, 0.2, 0.2);
+        img{
+            height: 100px;
+            width: 100px;
+            border-radius: 50%;
+            margin: 10px 10px;
+        }
+        span{
+            font-size: 20px;
+            color:darkgray  ;
+            margin: 0;
+            font-weight: 600;
+        }
+    }
+
+    .item{
+        display: flex;        
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        transition: all 3ms ease-in-out;
+        img{
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+        }
+        span{
+            font-size: 15px;
+            color:darkgray;
+        }
+    }
+    .item:hover{
+        background-color: cyan;
+        height:40px;
+        border-radius: 10px;
+        padding-left: 10px;
+        transition: all 3ms ease-in-out;
+    }
+}
