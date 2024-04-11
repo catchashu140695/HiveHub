@@ -1,39 +1,42 @@
-import React from 'react'
-import '../Navbar/navbar.scss'
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import DarkModeOutlinedIcon from '@mui/icons-material/DarkModeOutlined';
+import React, { useState } from 'react';
+import '../Navbar/navbar.scss';
 import AppsOutlinedIcon from '@mui/icons-material/AppsOutlined';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
 import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import NotificationsNoneOutlinedIcon from '@mui/icons-material/NotificationsNoneOutlined';
-
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 import { NavLink } from 'react-router-dom';
 
-const navbar = () => {
+const Navbar = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isSidebar,setIsSidebar]=useState(true);
+
+  const handleToggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+    document.body.classList.toggle('dark');
+  };
+
+  const handleSidebarToggle = () => {      
+    setIsSidebar(!isSidebar);
+  };
   return (
     <>
-      <div className="navbar">
+      <div className="topbar">
         <div className="left">
-          <NavLink to="/">HiveHub</NavLink>
-          <HomeOutlinedIcon />
-          <DarkModeOutlinedIcon />
-          <AppsOutlinedIcon />
-          <div className="search">
-          <SearchOutlinedIcon />
-          <input type='text' placeholder='Search' />
-          </div>
-
+          <NavLink to="/">HiveHub AI</NavLink>
         </div>
         <div className="right">
-          <AccountCircleOutlinedIcon />
-          <EmailOutlinedIcon />
-          <NotificationsNoneOutlinedIcon />
-          
+          <div className="card-left">
+            <AppsOutlinedIcon onClick={handleSidebarToggle} />
+          </div>
+          <div className="card-right">
+            <DarkModeIcon  onClick={handleToggleDarkMode} />
+            <EmailOutlinedIcon />
+            <NotificationsNoneOutlinedIcon />
+          </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default navbar
+export default Navbar;

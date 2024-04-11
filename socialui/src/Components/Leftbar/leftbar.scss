@@ -1,28 +1,26 @@
 .leftbar{
     display: flex;
     flex-direction: column;
-    height: calc(100vh - 71px);
-    overflow: scroll;
-    background-color: white;
+    height: calc(100vh - 60px);
+    overflow: scroll;    
     width: 20%;
-    gap: 20px;
-    padding: 10px 20px;
-    border-right: 1px solid lightgray;
-    &::-webkit-scrollbar{
-        display: none;
-    }
+    gap: 5px;
+    padding: 10px 10px;        
     position: sticky;
     left: 0;
-    box-shadow: 0 4px 4px 4px rgba(0, 0, 0, 0.2);
+    top: 60px;
+    background-color: var(--background-color);
+    color: var(--primary-text-color);
+    
     .user{
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 10px;
-        border: 1px solid lightgray;
+        border: 0;        
         border-radius: 10px;
-        box-shadow: 4px 4px 4px 4px rgba(0.2, 0.2, 0.2, 0.2);
+        background-color: var(--card-background-color);
         img{
             height: 100px;
             width: 100px;
@@ -41,8 +39,12 @@
         display: flex;        
         align-items: center;
         gap: 10px;
-        cursor: pointer;
-        transition: all 3ms ease-in-out;
+        height:40px;
+        cursor: pointer;        
+        overflow-y: scroll;
+        padding-left: 10px;
+        
+        
         img{
             height: 30px;
             width: 30px;
@@ -50,14 +52,13 @@
         }
         span{
             font-size: 15px;
-            color:darkgray;
+            color:var(--secondary-text-color);
+            font-weight: 600;
         }
     }
     .item:hover{
-        background-color: cyan;
-        height:40px;
-        border-radius: 10px;
-        padding-left: 10px;
-        transition: all 3ms ease-in-out;
+        background-color: var(--card-background-color);        
+        border-radius: 10px;       
+        
     }
 }

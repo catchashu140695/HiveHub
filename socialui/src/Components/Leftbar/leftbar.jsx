@@ -1,10 +1,7 @@
 import React from 'react';
 import '../Leftbar/leftbar.scss';
-import checkimg from  '../../Assets/img/check.png';
-import commentsimg from  '../../Assets/img/comments.png';
-import peopleimg from  '../../Assets/img/people.png';
-import sixteenimg from  '../../Assets/img/sixteen.png';
 import userimg from '../../Assets/img/user.png';
+import YouTubeIcon from '@mui/icons-material/YouTube';
 
 const leftbar = () => {
   return (
@@ -15,25 +12,18 @@ const leftbar = () => {
           <span>Ashutosh Mishra</span>
         </div>
         <div className="item">
-          <img src={userimg} alt=''></img>
-          <span>Profile</span>
+          <YouTubeIcon />
+          <span>Youtube Downloader</span>
         </div>
         <div className="item">
-          <img src={commentsimg} alt=''></img>
-          <span>Messages</span>
+          <YouTubeIcon />
+          <span>Upload Automate</span>
         </div>
         <div className="item">
-          <img src={peopleimg} alt=''></img>
-          <span>Friends</span>
+          <YouTubeIcon />
+          <span>Text to Video</span>
         </div>
-        <div className="item">
-          <img src={sixteenimg} alt=''></img>
-          <span>Events</span>
-        </div>
-        <div className="item">
-          <img src={checkimg} alt=''></img>
-          <span>To Do</span>
-        </div>
+        
       </div>
     </>
   )
